@@ -6,7 +6,7 @@ module Xrc
       # @example
       #   message.body #=> "Hello"
       def body
-        CGI.unescape_html(@element.elements["body/text()"].to_s)
+        CGI.unescape_html(CGI.unescape_html(@element.elements["body/text()"].to_s))
       end
 
       # Returns this message in Hash format
